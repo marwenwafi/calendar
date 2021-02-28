@@ -61,3 +61,6 @@ table td > span {
 .stage-saturn {
   background-color: #26C6DA;
 }
+
+table { empty-cells: show;}
+
