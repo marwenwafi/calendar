@@ -18,7 +18,8 @@ table tr:nth-child(even) th {
 }
 table th,
 table td {
-  padding: 0.5rem 1rem;
+  padding: 0.24rem 1rem;
+  height: 2rem;
 }
 table th {
   font-weight: normal;
@@ -64,3 +65,13 @@ table td > span {
 
 table { empty-cells: show;}
 
+.stripe-4 {
+  color: white;
+  background: repeating-linear-gradient(
+    -45deg,
+    #222,
+    #222 5px,
+    #333 5px,
+    #333 10px
+  );
+}

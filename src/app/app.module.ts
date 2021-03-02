@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ConsultationsComponent } from './consultations/consultations.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AngularMyDatePickerModule } from 'angular-mydatepicker';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    AngularMyDatePickerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
