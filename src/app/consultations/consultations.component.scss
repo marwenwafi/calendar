@@ -1,0 +1,106 @@
+$blockTimes: 800,830,900,930,1000,1030,1100,1130,1200,1230,1300,1330,1400,1430,1500,1530,1600,1630,1700;
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 4rem 0;
+  font-family: -system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.scheduleContainer {
+  display: grid;
+  grid-gap: 0.2rem;
+
+  grid-template-columns: 5rem repeat(5, 1fr);
+  grid-template-rows: repeat(28, 1fr);
+  grid-template-areas:
+    "time800 monday tuesday wednesday thursday friday"
+    "time830 monday tuesday wednesday thursday friday"
+    "time900 monday tuesday wednesday thursday friday"
+    "time930 monday tuesday wednesday thursday friday"
+    "time1000 monday tuesday wednesday thursday friday"
+    "time1030 monday tuesday wednesday thursday friday"
+    "time1100 monday tuesday wednesday thursday friday"
+    "time1130 monday tuesday wednesday thursday friday"
+    "time1200 monday tuesday wednesday thursday friday"
+    "time1230 monday tuesday wednesday thursday friday"
+    "time1300 monday tuesday wednesday thursday friday"
+    "time1330 monday tuesday wednesday thursday friday"
+    "time1400 monday tuesday wednesday thursday friday"
+    "time1430 monday tuesday wednesday thursday friday"
+    "time1500 monday tuesday wednesday thursday friday"
+    "time1530 monday tuesday wednesday thursday friday"
+    "time1600 monday tuesday wednesday thursday friday"
+    "time1630 monday tuesday wednesday thursday friday"
+    "time1700 monday tuesday wednesday thursday friday";
+}
+
+/**
+ * Time
+ */
+.time {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-top: thin dotted #ccc;
+  height: 100%;
+  padding: 0 0.5rem;
+
+  @each $time in $blockTimes {
+    &.start-#{$time} {grid-area: time#{$time} }
+  }
+
+  &[class*="30"]:not(.start-1300) {
+    font-size: 0.8rem;
+    color: #ccc;
+  }
+}
+
+
+/**
+ * Event
+ */
+.event {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0.5rem 1rem;
+  background-color: orange;
+  border-radius: 0.2rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  line-height: 1.4;
+
+  span {
+    display: block;
+    width: 100%;
+    font-size: 0.8em;
+    font-weight: normal;
+  }
+
+  @each $time in $blockTimes {
+    &.start-#{$time} {grid-row-start: time#{$time} }
+  }
+
+  @each $time in $blockTimes {
+    &.end-#{$time} {grid-row-end: time#{$time} }
+  }
+
+  &.monday-earth {
+    grid-column-start: monday;
+    background-color: #FFA726};
+  &.tuesday-mercury {
+    grid-column-end: tuesday;
+    background-color: #9CCC65};
+  &.wednesday-venus {
+    grid-column-end: wednesday;
+    background-color: #FF8A65};
+  &.thursday-mars {
+    grid-column-end: thursday;
+    background-color: #B3E5FC};
+  &.friday-jupiter {
+    grid-column-end: friday;
+    background-color: #81D4FA};
+}
