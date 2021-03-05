@@ -12,6 +12,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~9.1.12",
+    "@angular/cdk": "^9.2.4",
     "@angular/common": "~9.1.12",
     "@angular/compiler": "~9.1.12",
     "@angular/core": "~9.1.12",
@@ -23,8 +24,8 @@
     "@fortawesome/angular-fontawesome": "^0.6.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
-    "angular-mydatepicker": "^0.11.0",
     "bootstrap": "^4.6.0",
+    "date-fns": "^2.19.0",
     "mydatepicker": "^2.6.11",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",

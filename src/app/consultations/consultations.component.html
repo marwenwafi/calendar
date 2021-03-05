@@ -1,27 +1,16 @@
-<div class="">
-  <md-datepicker></md-datepicker>
-</div>
 <div class="container">
   <h1>Consultation's schedule</h1>
   <div class="controls">
     <button type="button" class="btn btn-light">Today</button>
-    <button type="button" class="btn btn-light"><</button>
-    <div class="input-group dp">
-      <!-- input box -->
-      <input class="form-control" name="mydate" placeholder="Select a date"
-             angular-mydatepicker #dp="angular-mydatepicker"
-             [(ngModel)]="model" [options]="myDpOptions"
-             (dateChanged)="onDateChanged($event)"/>
+    <button type="button" class="btn btn-light" (click)="previousWeek()"><</button>
 
-      <!-- toggle calendar button -->
-      <div class="input-group-append">
-        <button type="button" class="btn btn-secondary" (click)="dp.toggleCalendar()">
-          <fa-icon [icon]="faCalendar"></fa-icon>
-        </button>
-      </div>
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" [matDatepickerFilter]="filterSelectableDays()" placeholder="{{startOfWeek}} - {{endOfWeek}}">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker startView="year" [startAt]="today"></mat-datepicker>
+    </mat-form-field>
 
-    </div>
-    <button type="button" class="btn btn-light">></button>
+    <button type="button" class="btn btn-light" (click)="nextWeek()">></button>
   </div>
   <div class="scheduleContainer">
 

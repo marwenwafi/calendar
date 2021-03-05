@@ -1,7 +1,8 @@
 import {Component, ElementRef, OnInit} from '@angular/core';
 import {ConsulationService} from "../services/consulation.service";
-import {IAngularMyDpOptions, IMyDateModel} from 'angular-mydatepicker';
-import { faCalendar } from '@fortawesome/free-solid-svg-icons';
+import {FormControl, FormGroup} from "@angular/forms";
+import { add, sub, format, startOfWeek,endOfWeek } from 'date-fns'
+
 
 @Component({
   selector: 'app-consultations',
@@ -10,23 +11,20 @@ import { faCalendar } from '@fortawesome/free-solid-svg-icons';
 })
 export class ConsultationsComponent implements OnInit {
 
-  faCalendar = faCalendar;
-  today = new Date();
-  myDpOptions: IAngularMyDpOptions = {
-    dateRange: false,
-    dateFormat: 'dd-mm-yyyy'
-    // other options are here...
-  };
-
-  model: IMyDateModel = null;
-
-
-
+  today;
+  startOfWeek;
+  endOfWeek;
   consultationslist;
 
-  constructor(private consService: ConsulationService) { }
+  constructor(private consService: ConsulationService) {
+    //initialize the picker
+    this.today = new Date();
+    this.startOfWeek = startOfWeek(this.today);
+    this.endOfWeek = endOfWeek(this.today);
+  }
 
   ngOnInit(): void {
+
     this.loadConsultations();
   }
 
@@ -37,12 +35,23 @@ export class ConsultationsComponent implements OnInit {
       (data) => {this.consultationslist = data;},
       (error) => console.log(error)
     );
-    console.log(this.consultationslist);
   }
 
-  // optional date changed callback
-  onDateChanged(event: IMyDateModel): void {
-    console.log(event.singleDate.date);
+  // Make only Mondays Selectable
+  filterSelectableDays() {
+    return (d: Date | null): boolean => {
+      const day = (d || new Date()).getDay();
+      return day == 1;
+    }
   }
 
+  previousWeek()
+  {
+
+  }
+
+  nextWeek()
+  {
+
+  }
 }
