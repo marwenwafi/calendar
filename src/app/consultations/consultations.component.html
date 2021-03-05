@@ -1,14 +1,39 @@
 <div class="">
-
+  <md-datepicker></md-datepicker>
 </div>
 <div class="container">
   <h1>Consultation's schedule</h1>
   <div class="controls">
     <button type="button" class="btn btn-light">Today</button>
     <button type="button" class="btn btn-light"><</button>
+    <div class="input-group dp">
+      <!-- input box -->
+      <input class="form-control" name="mydate" placeholder="Select a date"
+             angular-mydatepicker #dp="angular-mydatepicker"
+             [(ngModel)]="model" [options]="myDpOptions"
+             (dateChanged)="onDateChanged($event)"/>
+
+      <!-- toggle calendar button -->
+      <div class="input-group-append">
+        <button type="button" class="btn btn-secondary" (click)="dp.toggleCalendar()">
+          <fa-icon [icon]="faCalendar"></fa-icon>
+        </button>
+      </div>
+
+    </div>
     <button type="button" class="btn btn-light">></button>
   </div>
   <div class="scheduleContainer">
+
+    <!-- DAYS -->
+    <div></div>
+    <div class="day">Monday</div>
+    <div class="day">Tuesday</div>
+    <div class="day">Wednesday</div>
+    <div class="day">Thursday</div>
+    <div class="day">Friday</div>
+    <div class="day">Saturday</div>
+    <div class="day">Sunday</div>
 
     <!-- TIMES -->
     <div class="time start-800">8:00</div>
@@ -32,23 +57,12 @@
     <div class="time start-1700">17:00</div>
 
     <!-- EVENTS -->
-    <div class="event monday-earth start-800 end-930">Arrival and registration <span>Registration Area</span></div>
-    <div class="event monday-earth start-1030 end-1230">sdfsdfsdfsfdn <span>Registration Area</span></div>
-    <div class="event tuesday-mercury start-1000 end-1100">Welcome <span>Earth Stage</span></div>
-    <div class="event friday-jupiter start-1030 end-1230">Speaker One <span>Earth Stage</span></div>
-    <div class="event wednesday-venus start-1400 end-1500">Speaker Two <span>Earth Stage</span></div>
-    <div class="event thursday-mars start-1130 end-1200">Speaker Three <span>Earth Stage</span></div>
-
-
-
-    <!--
-    <div class="event stage-mercury start-1200 end-1600 length-1">Speaker Five <span>Mercury Stage</span></div>
-    <div class="event stage-venus start-1200 end-1600 length-1">Speaker Six <span>Venus Stage</span></div>
-    <div class="event start-1200 end-1600 length-1"><p>sdfsdfsdf</p></div>
-    <div class="event stage-saturn start-1200 end-1300 length-1">Lunch <span>Saturn Stage</span></div>
-
-    <div class="event stage-earth start-1630 end-1630 length-4">Speaker Eigth <span>Earth Stage</span></div>
-    <div class="event stage-earth start-1700 end-1700 length-4">Speaker Nine <span>Earth Stage</span></div>
-    -->
+    <div class="event monday start-800 end-930">Arrival and registration <span>Registration Area</span></div>
+    <div class="event monday start-1030 end-1230">sdfsdfsdfsfdn <span>Registration Area</span></div>
+    <div class="event monday start-1230 end-1330">fdg4545df <span>Registration Area</span></div>
+    <div class="event tuesday start-1000 end-1100">Welcome <span>Earth Stage</span></div>
+    <div class="event friday start-1030 end-1230">Speaker One <span>Earth Stage</span></div>
+    <div class="event wednesday start-1400 end-1500">Speaker Two <span>Earth Stage</span></div>
+    <div class="event thursday start-1130 end-1200">Speaker Three <span>Earth Stage</span></div>
   </div>
 </div>

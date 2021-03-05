@@ -1,8 +1,7 @@
 import {Component, ElementRef, OnInit} from '@angular/core';
 import {ConsulationService} from "../services/consulation.service";
-import {IMyDpOptions} from 'mydatepicker';
-import { ViewChildren, QueryList } from '@angular/core';
-
+import {IAngularMyDpOptions, IMyDateModel} from 'angular-mydatepicker';
+import { faCalendar } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-consultations',
@@ -11,23 +10,39 @@ import { ViewChildren, QueryList } from '@angular/core';
 })
 export class ConsultationsComponent implements OnInit {
 
+  faCalendar = faCalendar;
+  today = new Date();
+  myDpOptions: IAngularMyDpOptions = {
+    dateRange: false,
+    dateFormat: 'dd-mm-yyyy'
+    // other options are here...
+  };
+
+  model: IMyDateModel = null;
+
+
+
   consultationslist;
 
   constructor(private consService: ConsulationService) { }
 
-  @ViewChildren('cmp') components:ElementRef;
-
-  ngAfterViewInit(){
-    // print array of CustomComponent objects
-    console.log(this.components);
+  ngOnInit(): void {
+    this.loadConsultations();
   }
 
-  ngOnInit(): void {
+  //load Consultations from service
+  loadConsultations()
+  {
     this.consService.getAllConsultations().subscribe(
       (data) => {this.consultationslist = data;},
       (error) => console.log(error)
     );
     console.log(this.consultationslist);
+  }
+
+  // optional date changed callback
+  onDateChanged(event: IMyDateModel): void {
+    console.log(event.singleDate.date);
   }
 
 }
