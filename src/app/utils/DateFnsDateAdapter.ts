@@ -4,7 +4,7 @@ import {addDays, addMonths, addYears, format, getDate, getDaysInMonth, getMonth,
 
 // CONFIG. Use environment or something for a dynamic locale and settings
 
-import {es as locale} from 'date-fns/locale';
+import {enCA as locale} from 'date-fns/locale';
 const WEEK_STARTS_ON = 1; // 0 sunday, 1 monday...
 
 export const MAT_DATE_FNS_DATE_FORMATS = {

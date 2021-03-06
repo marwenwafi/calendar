@@ -13,14 +13,18 @@ export class ConsultationsComponent implements OnInit {
 
   today;
   startOfWeek;
+  start;
   endOfWeek;
+  end;
   consultationslist;
 
   constructor(private consService: ConsulationService) {
     //initialize the picker
     this.today = new Date();
-    this.startOfWeek = startOfWeek(this.today);
-    this.endOfWeek = endOfWeek(this.today);
+    this.startOfWeek = startOfWeek(this.today, { weekStartsOn: 1 });
+    this.start = format(this.startOfWeek, "d MMMM yyyy");
+    this.endOfWeek = endOfWeek(this.today, { weekStartsOn: 1 });
+    this.end = format(this.endOfWeek,"d MMMM yyyy");
   }
 
   ngOnInit(): void {
@@ -47,11 +51,17 @@ export class ConsultationsComponent implements OnInit {
 
   previousWeek()
   {
-
+    this.startOfWeek = sub(this.startOfWeek,{days:7});
+    this.start = format(this.startOfWeek, "d MMMM yyyy");
+    this.endOfWeek = sub(this.endOfWeek,{days:7});
+    this.end = format(this.endOfWeek,"d MMMM yyyy");
   }
 
   nextWeek()
   {
-
+    this.startOfWeek = add(this.startOfWeek,{days:7});
+    this.start = format(this.startOfWeek, "d MMMM yyyy");
+    this.endOfWeek = add(this.endOfWeek,{days:7});
+    this.end = format(this.endOfWeek,"d MMMM yyyy");
   }
 }
