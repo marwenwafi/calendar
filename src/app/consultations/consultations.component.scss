@@ -22,7 +22,7 @@ body {
   grid-gap: 0.2rem;
 
   grid-template-columns: 5rem repeat(7, 1fr);
-  grid-template-rows: repeat(20, 1fr);
+  grid-template-rows: repeat(108, 1fr);
   grid-template-areas:
     ". day day day day day day day"
     "time800 monday tuesday wednesday thursday friday saturday sunday"
@@ -117,5 +117,13 @@ body {
   &.friday{
     grid-column-start: friday;
   }
+
+  &.patient1 {background-color: #FFA726};
+  &.patient2 {background-color: #9CCC65};
+  &.patient3 {background-color: #FF8A65};
+  &.patient4 {background-color: #B3E5FC};
+  &.patient5 {background-color: #81D4FA};
+  &.patient6 {background-color: #26C6DA};
+
 
 }

@@ -1,18 +1,19 @@
 <div class="container">
   <h1>Consultation's schedule</h1>
   <div class="controls">
-    <button type="button" class="btn btn-light">Today</button>
+    <button type="button" class="btn btn-light" (click)="backToCurrentWeek()">Today</button>
     <button type="button" class="btn btn-light" (click)="previousWeek()"><</button>
 
     <mat-form-field>
-      <input matInput [matDatepicker]="picker" [matDatepickerFilter]="filterSelectableDays()" placeholder="{{start}} - {{end}}">
+      <input matInput [matDatepicker]="picker" [matDatepickerFilter]="filterSelectableDays()" placeholder="{{startText}} - {{endText}}">
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker startView="year" [startAt]="today"></mat-datepicker>
     </mat-form-field>
+    {{picker._selected}}
 
     <button type="button" class="btn btn-light" (click)="nextWeek()">></button>
   </div>
-  <div class="scheduleContainer">
+  <div class="scheduleContainer" [ngSwitch]="">
 
     <!-- DAYS -->
     <div></div>
@@ -46,12 +47,11 @@
     <div class="time start-1700">17:00</div>
 
     <!-- EVENTS -->
-    <div class="event monday start-800 end-930">Arrival and registration <span>Registration Area</span></div>
+
+    <div *ngFor="let c of consultationslist" [ngClass]="getEventClass(c.start_time,c.end_time)">sdfsdf
+      <span>Registration Area</span>
+    </div>
+
     <div class="event monday start-1030 end-1230">sdfsdfsdfsfdn <span>Registration Area</span></div>
-    <div class="event monday start-1230 end-1330">fdg4545df <span>Registration Area</span></div>
-    <div class="event tuesday start-1000 end-1100">Welcome <span>Earth Stage</span></div>
-    <div class="event friday start-1030 end-1230">Speaker One <span>Earth Stage</span></div>
-    <div class="event wednesday start-1400 end-1500">Speaker Two <span>Earth Stage</span></div>
-    <div class="event thursday start-1130 end-1200">Speaker Three <span>Earth Stage</span></div>
   </div>
 </div>

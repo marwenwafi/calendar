@@ -16,6 +16,6 @@ export class ConsulationService {
 
   getAllConsultations()
   {
-    return this.http.get<Consultation>(this.url);
+    return this.http.get<Consultation[]>(this.url);
   }
 }

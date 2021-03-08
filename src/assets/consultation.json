@@ -2,8 +2,8 @@
   {
     "_id": "603c083be1d693c7aeffcb93",
     "id": 0,
-    "start_date": "08-01-2021 08:05:42",
-    "end_date": "08-01-2021 09:15:42",
+    "start_time": "03-01-2021 08:05:42",
+    "end_time": "03-01-2021 09:15:42",
     "patient": {
       "id": 0,
       "name": "Bright Shepard"
@@ -13,8 +13,8 @@
   {
     "_id": "603c083bcc17c040951bb346",
     "id": 1,
-    "start_date": "08-01-2021 11:05:42",
-    "end_date": "08-01-2021 12:05:42",
+    "start_time": "03-02-2021 11:05:42",
+    "end_time": "03-02-2021 12:05:42",
     "patient": {
       "id": 1,
       "name": "Essie Erickson"
@@ -24,8 +24,8 @@
   {
     "_id": "603c083bf9e2a14d108ccd23",
     "id": 2,
-    "start_date": "10-01-2021 11:05:42",
-    "end_date": "10-01-2021 11:45:42",
+    "start_time": "01-11-2021 11:05:42",
+    "end_time": "01-11-2021 11:45:42",
     "patient": {
       "id": 2,
       "name": "Reilly Mendoza"
@@ -35,8 +35,8 @@
   {
     "_id": "603c083ba1b37850d9d411e2",
     "id": 3,
-    "start_date": "",
-    "end_date": "",
+    "start_time": "03-05-2021 15:00:00",
+    "end_time": "03-05-2021 16:15:42",
     "patient": {
       "id": 3,
       "name": "Jan Harvey"
@@ -46,8 +46,8 @@
   {
     "_id": "603c083bb5c51c3c80744a1a",
     "id": 4,
-    "start_date": "",
-    "end_date": "",
+    "start_time": "03-08-2021 09:00:00",
+    "end_time": "03-08-2021 11:05:00",
     "patient": {
       "id": 4,
       "name": "Lottie Bolton"
@@ -57,8 +57,8 @@
   {
     "_id": "603c083bbd262a05667895c3",
     "id": 5,
-    "start_date": "",
-    "end_date": "",
+    "start_time": "02-08-2021 10:00:00",
+    "end_time": "02-08-2021 11:30:00",
     "patient": {
       "id": 5,
       "name": "Juliana Alford"
@@ -68,8 +68,8 @@
   {
     "_id": "603c083b9b4a3a0e2ee3b2df",
     "id": 6,
-    "start_date": "",
-    "end_date": "",
+    "start_time": "02-22-2021 09:00:00",
+    "end_time": "02-22-2021 11:05:00",
     "patient": {
       "id": 6,
       "name": "Camacho Craig"
@@ -79,8 +79,8 @@
   {
     "_id": "603c083ba1a9ae28acf99f94",
     "id": 7,
-    "start_date": "",
-    "end_date": "",
+    "start_time": "02-25-2021 08:30:00",
+    "end_time": "02-25-2021 10:00:00",
     "patient": {
       "id": 7,
       "name": "Bonnie Mcdowell"
@@ -90,8 +90,8 @@
   {
     "_id": "603c083bf3e79a5538012ccf",
     "id": 8,
-    "start_date": "",
-    "end_date": "",
+    "start_time": "02-26-2021 16:00:00",
+    "end_time": "02-26-2021 17:00:00",
     "patient": {
       "id": 8,
       "name": "Selma Gilliam"
@@ -101,8 +101,8 @@
   {
     "_id": "603c083b2135cd351d72cbef",
     "id": 9,
-    "start_date": "",
-    "end_date": "",
+    "start_time": "03-10-2021 09:00:00",
+    "end_time": "03-10-2021 11:05:00",
     "patient": {
       "id": 9,
       "name": "Helga Norris"
@@ -112,8 +112,8 @@
   {
     "_id": "603c083b965b5943826393be",
     "id": 10,
-    "start_date": "",
-    "end_date": "",
+    "start_time": "03-11-2021 09:00:00",
+    "end_time": "03-11-2021 11:05:00",
     "patient": {
       "id": 10,
       "name": "Lillian Avila"
@@ -123,8 +123,8 @@
   {
     "_id": "603c083be36c5391573c3f50",
     "id": 11,
-    "start_date": "",
-    "end_date": "",
+    "start_time": "03-16-2021 10:00:00",
+    "end_time": "03-16-2021 11:45:00",
     "patient": {
       "id": 11,
       "name": "Tamera Sawyer"
@@ -134,8 +134,8 @@
   {
     "_id": "603c083b645b3240696c5218",
     "id": 12,
-    "start_date": "",
-    "end_date": "",
+    "start_time": "03-19-2021 09:00:00",
+    "end_time": "03-19-2021 11:05:00",
     "patient": {
       "id": 12,
       "name": "Katelyn Madden"
@@ -145,8 +145,8 @@
   {
     "_id": "603c083b00701e1a769d60dd",
     "id": 13,
-    "start_date": "",
-    "end_date": "",
+    "start_time": "03-19-2021 14:00:00",
+    "end_time": "03-19-2021 15:05:00",
     "patient": {
       "id": 13,
       "name": "Fox Williamson"
@@ -156,8 +156,8 @@
   {
     "_id": "603c083bbc14e0c5da1c482f",
     "id": 14,
-    "start_date": "",
-    "end_date": "",
+    "start_time": "03-19-2021 15:30:00",
+    "end_time": "03-19-2021 16:30:00",
     "patient": {
       "id": 14,
       "name": "Andrews Walker"
@@ -167,8 +167,8 @@
   {
     "_id": "603c083b5cfe884338c27fb1",
     "id": 15,
-    "start_date": "",
-    "end_date": "",
+    "start_time": "03-10-2021 14:00:00",
+    "end_time": "03-10-2021 15:30:00",
     "patient": {
       "id": 15,
       "name": "Lorna Chapman"
@@ -178,8 +178,8 @@
   {
     "_id": "603c083b6114c8b1e7c7ad96",
     "id": 16,
-    "start_date": "",
-    "end_date": "",
+    "start_time": "03-11-2021 08:00:00",
+    "end_time": "03-11-2021 08:45:00",
     "patient": {
       "id": 16,
       "name": "Wilder Gilbert"
@@ -189,8 +189,8 @@
   {
     "_id": "603c083be9535595b07e3db8",
     "id": 17,
-    "start_date": "",
-    "end_date": "",
+    "start_time": "03-11-2021 09:00:00",
+    "end_time": "03-11-2021 11:05:00",
     "patient": {
       "id": 17,
       "name": "Casandra Montgomery"
@@ -200,8 +200,8 @@
   {
     "_id": "603c083b20a93f56109edb5d",
     "id": 18,
-    "start_date": "",
-    "end_date": "",
+    "start_time": "03-11-2021 14:00:00",
+    "end_time": "03-11-2021 14:15:00",
     "patient": {
       "id": 18,
       "name": "Catherine Bowman"
@@ -211,8 +211,8 @@
   {
     "_id": "603c083ba5ea3e3a9ffedac8",
     "id": 19,
-    "start_date": "",
-    "end_date": "",
+    "start_time": "03-12-2021 10:30:00",
+    "end_time": "03-12-2021 11:15:00",
     "patient": {
       "id": 19,
       "name": "Claire Alvarez"
