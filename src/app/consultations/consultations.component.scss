@@ -1,4 +1,4 @@
-$blockTimes: 800,805,810,815,820,825,830,835,840,845,850,855,900,905,910,915,920,925,930,935,940,945,950,955,1000,1005,1010,1015,1020,1025,1030,1035,1040,1045,1050,1055,1100,1105,1110,1115,1120,1125,1130,1135,1140,1145,1150,1155,1200,1205,1210,1215,1220,1225,1230,1235,1240,1245,1250,1255,1300,1305,1310,1315,1320,1325,1330,1335,1340,1345,1350,1355,1400,1405,1410,1415,1420,1425,1430,1435,1440,1445,1450,1455,1500,1505,1510,1515,1520,1525,1530,1535,1540,1545,1550,1555,1600,1605,1610,1615,1620,1625,1630,1635,1640,1645,1650,1655,1700;
+$blockTimes: 800, 805, 810, 815, 820, 825, 830, 835, 840, 845, 850, 855, 900, 905, 910, 915, 920, 925, 930, 935, 940, 945, 950, 955, 1000, 1005, 1010, 1015, 1020, 1025, 1030, 1035, 1040, 1045, 1050, 1055, 1100, 1105, 1110, 1115, 1120, 1125, 1130, 1135, 1140, 1145, 1150, 1155, 1200, 1205, 1210, 1215, 1220, 1225, 1230, 1235, 1240, 1245, 1250, 1255, 1300, 1305, 1310, 1315, 1320, 1325, 1330, 1335, 1340, 1345, 1350, 1355, 1400, 1405, 1410, 1415, 1420, 1425, 1430, 1435, 1440, 1445, 1450, 1455, 1500, 1505, 1510, 1515, 1520, 1525, 1530, 1535, 1540, 1545, 1550, 1555, 1600, 1605, 1610, 1615, 1620, 1625, 1630, 1635, 1640, 1645, 1650, 1655, 1700;
 
 body {
   display: flex;
@@ -9,13 +9,20 @@ body {
   font-family: -system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-.dp {
-  width: 20rem;
+.today {
+  margin-right: 1rem;
 }
-.controls{
+
+.dp {
+  width: 16rem;
+}
+
+.controls {
   display: flex;
   flex-direction: row;
+  justify-content: flex-end;
 }
+
 
 .scheduleContainer {
   display: grid;
@@ -58,7 +65,9 @@ body {
   padding: 0 0.5rem;
 
   @each $time in $blockTimes {
-    &.start-#{$time} {grid-area: time#{$time} }
+    &.start-#{$time} {
+      grid-area: time#{$time}
+    }
   }
 
   &[class*="30"]:not(.start-1300) {
@@ -67,10 +76,18 @@ body {
   }
 }
 
-.day{
+.day {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+
+  span {
+
+    width: 100%;
+    font-size: 0.8em;
+    font-weight: bold;
+  }
 }
 
 /**
@@ -78,52 +95,100 @@ body {
  */
 .event {
   display: flex;
-  justify-content: center;
+  justify-content: left;
+  align-items: flex-start;
   flex-direction: column;
   padding: 0.5rem 1rem;
   background-color: orange;
   border-radius: 0.2rem;
   font-size: 0.8rem;
-  font-weight: bold;
+  font-weight: normal;
   line-height: 1.4;
 
   span {
     display: block;
     width: 100%;
     font-size: 0.8em;
-    font-weight: normal;
+    font-weight: bold;
+  }
+
+  div {
+    margin-top: auto;
+    background-color: #a46202;
+    border-radius: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 
   @each $time in $blockTimes {
-    &.start-#{$time} {grid-row-start: time#{$time} }
+    &.start-#{$time} {
+      grid-row-start: time#{$time}
+    }
   }
 
   @each $time in $blockTimes {
-    &.end-#{$time} {grid-row-end: time#{$time} }
+    &.end-#{$time} {
+      grid-row-end: time#{$time}
+    }
   }
 
   &.monday {
     grid-column-start: monday;
   }
+
   &.tuesday {
     grid-column-start: tuesday;
   }
+
   &.wednesday {
     grid-column-start: wednesday;
   }
+
   &.thursday {
     grid-column-start: thursday;
   }
-  &.friday{
+
+  &.friday {
     grid-column-start: friday;
   }
 
-  &.patient1 {background-color: #FFA726};
-  &.patient2 {background-color: #9CCC65};
-  &.patient3 {background-color: #FF8A65};
-  &.patient4 {background-color: #B3E5FC};
-  &.patient5 {background-color: #81D4FA};
-  &.patient6 {background-color: #26C6DA};
+  &.saturday {
+    grid-column-start: saturday;
+  }
+
+  &.sunday {
+    grid-column-start: sunday;
+  }
+
+  &.patient1 {
+    background-color: #FFA726
+  }
+;
+
+  &.patient2 {
+    background-color: #9CCC65
+  }
+;
+
+  &.patient3 {
+    background-color: #FF8A65
+  }
+;
+
+  &.patient4 {
+    background-color: #B3E5FC
+  }
+;
+
+  &.patient5 {
+    background-color: #81D4FA
+  }
+;
+
+  &.patient6 {
+    background-color: #26C6DA
+  }
+;
 
 
 }

@@ -1,7 +1,7 @@
 import {Component, ElementRef, OnInit} from '@angular/core';
 import {ConsulationService} from "../services/consulation.service";
 import {FormControl, FormGroup} from "@angular/forms";
-import { add, sub, format, startOfWeek,endOfWeek, toDate } from 'date-fns'
+import {add, sub, format, startOfWeek, endOfWeek, subMinutes} from 'date-fns'
 import {Consultation} from "../model/Consultation";
 
 
@@ -20,12 +20,11 @@ export class ConsultationsComponent implements OnInit {
   consultationslist;
 
   constructor(private consService: ConsulationService) {
-    //initialize the picker
-    this.backToCurrentWeek();
   }
 
   ngOnInit(): void {
-    this.loadConsultationsByWeek(this.startOfWeek,this.endOfWeek)
+    //initialize the picker
+    this.backToCurrentWeek();
   }
 
   //load Consultations from service
@@ -34,8 +33,8 @@ export class ConsultationsComponent implements OnInit {
     this.consService.getAllConsultations().subscribe(
       (data) => {
         this.consultationslist = data.filter(m => new Date(m.start_time) >= new Date(start) && new Date(m.start_time) <= new Date(end));
-        console.log()
-        this.sortByDateAsc();
+        //this.sortByDateAsc();
+        console.log(this.consultationslist);
         //this.setConsultationsList(
           //data
         //data.filter(m => new Date(m.start_time) >= new Date(start) && new Date(m.start_time) <= new Date(end))
@@ -116,12 +115,15 @@ export class ConsultationsComponent implements OnInit {
       }
     }
     classes+=" start-"+format(new Date(this.roundTime(start_time)), "Hmm");
-    classes+=" end-"+format(new Date(this.roundTime(end_time)), "Hmm");
+    classes+=" end-"+format(new Date(this.roundTime(subMinutes(new Date(end_time),30))), "Hmm");
+
     //For test purposes randomly adding classes for color of div
     const patient = ["patient1", "patient2", "patient3", "patient4", "patient5", "patient6"];
-
     const random = Math.floor(Math.random() * patient.length);
     classes+=" "+patient[random];
+
+
+    console.log(classes);
     return classes;
   }
 
