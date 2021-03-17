@@ -1,53 +1,62 @@
 <div class="container">
   <h1>Consultation's schedule</h1>
   <div class="controls">
-    <button type="button" class="today btn btn-outline-info btn-sm" (click)="backToCurrentWeek()" >Today</button>
+    <button type="button" class="today btn btn-outline-info btn-sm" (click)="backToCurrentWeek()">Today</button>
     <button type="button" class="btn btn-outline-info btn-sm" (click)="previousWeek()"><</button>
 
     <mat-form-field class="dp">
-      <input matInput [matDatepicker]="picker" [matDatepickerFilter]="filterSelectableDays()" placeholder="{{startText}} - {{endText}}">
+      <input matInput [matDatepicker]="picker" [matDatepickerFilter]="filterSelectableDays()"
+             placeholder="{{startText}} - {{endText}}">
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker startView="year" [startAt]="today"></mat-datepicker>
     </mat-form-field>
 
     <button type="button" class="btn btn-outline-info btn-sm" (click)="nextWeek()">></button>
   </div>
-  <div class="scheduleContainer">
+  <div class="schedule" aria-labelledby="schedule-heading">
 
-    <!-- DAYS -->
-    <div></div>
-    <div class="day">Monday</div>
-    <div class="day">Tuesday</div>
-    <div class="day">Wednesday</div>
-    <div class="day">Thursday</div>
-    <div class="day">Friday</div>
-    <div class="day">Saturday</div>
-    <div class="day">Sunday</div>
+    <!-- Days -->
+    <span class="track-slot" aria-hidden="true" style="grid-column: track-1; grid-row: tracks;">Monday</span>
+    <span class="track-slot" aria-hidden="true" style="grid-column: track-2; grid-row: tracks;">Tuesday</span>
+    <span class="track-slot" aria-hidden="true" style="grid-column: track-3; grid-row: tracks;">Wednesday</span>
+    <span class="track-slot" aria-hidden="true" style="grid-column: track-4; grid-row: tracks;">Thursday</span>
+    <span class="track-slot" aria-hidden="true" style="grid-column: track-5; grid-row: tracks;">Friday</span>
+    <span class="track-slot" aria-hidden="true" style="grid-column: track-6; grid-row: tracks;">Saturday</span>
+    <span class="track-slot" aria-hidden="true" style="grid-column: track-7; grid-row: tracks;">Sunday</span>
 
-    <!-- TIMES -->
-    <div class="time start-800">8:00</div>
-    <div class="time start-830">8:30</div>
-    <div class="time start-900">9:00</div>
-    <div class="time start-930">9:30</div>
-    <div class="time start-1000">10:00</div>
-    <div class="time start-1030">10:30</div>
-    <div class="time start-1100">11:00</div>
-    <div class="time start-1130">11:30</div>
-    <div class="time start-1200">12:00</div>
-    <div class="time start-1230">12:30</div>
-    <div class="time start-1300">13:00</div>
-    <div class="time start-1330">13:30</div>
-    <div class="time start-1400">14:00</div>
-    <div class="time start-1430">14:30</div>
-    <div class="time start-1500">15:00</div>
-    <div class="time start-1530">15:30</div>
-    <div class="time start-1600">16:00</div>
-    <div class="time start-1630">16:30</div>
-    <div class="time start-1700">17:00</div>
+    <!-- Side Times -->
+    <h2 class="time-slot" style="grid-row: 2;">8:00am</h2>
+    <h2 class="time-slot" style="grid-row: 32;">8:30am</h2>
+    <h2 class="time-slot" style="grid-row: 62;">9:00am</h2>
+    <h2 class="time-slot" style="grid-row: 92;">9:30am</h2>
+    <h2 class="time-slot" style="grid-row: 122;">10:00am</h2>
+    <h2 class="time-slot" style="grid-row: 152;">10:30am</h2>
+    <h2 class="time-slot" style="grid-row: 182;">11:00am</h2>
+    <h2 class="time-slot" style="grid-row: 212;">11:30am</h2>
+    <h2 class="time-slot" style="grid-row: 242;">12:00am</h2>
+    <h2 class="time-slot" style="grid-row: 272;">12:30am</h2>
+    <h2 class="time-slot" style="grid-row: 302;">13:00am</h2>
+    <h2 class="time-slot" style="grid-row: 332;">13:30am</h2>
+    <h2 class="time-slot" style="grid-row: 362;">14:00am</h2>
+    <h2 class="time-slot" style="grid-row: 392;">14:30am</h2>
+    <h2 class="time-slot" style="grid-row: 422;">15:00am</h2>
+    <h2 class="time-slot" style="grid-row: 452;">15:30am</h2>
+    <h2 class="time-slot" style="grid-row: 482;">16:00am</h2>
+    <h2 class="time-slot" style="grid-row: 512;">16:30am</h2>
+    <h2 class="time-slot" style="grid-row: 542;">17:00am</h2>
 
-    <!-- EVENTS -->
 
-    <div *ngFor="let c of consultationslist" [ngClass]="getEventClass(c.start_time,c.end_time)">
+    <div class="session session-1 track-1" style="grid-column: track-1; grid-row: 2/53;">
+      <h3 class="session-title"><a href="#">Talk Title</a></h3>
+      <span class="session-time">8:00 - 9:00</span>
+      <span class="session-track">Track: 1</span>
+      <span class="session-presenter">Presenter</span>
+    </div>
+
+    <!-- Consultations -->
+
+    <div *ngFor="let c of consultationslist" [ngClass]="getEventClass(c.start_time,c.end_time)"
+         [ngStyle]="getEventTime()">
       {{c.start_time  | date:'hh:mm'}}-{{c.end_time | date:'hh:mm'}}
       <span>{{c.patient.name}}</span>
       <div class="consultationtype" [ngSwitch]="c.type">

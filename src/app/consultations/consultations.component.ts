@@ -90,27 +90,27 @@ export class ConsultationsComponent implements OnInit {
 
   //Decide classes according to Dates, hence placement in the grid
   getEventClass(start_time: any,end_time: any) {
-    var classes = "event";
+    var classes = "session session-1";
     switch(format(new Date(start_time), "ccc"))
     {
       case "Mon": {
-        classes+=" monday"
+        classes+=" track-1"
         break;
       }
       case "Tue": {
-        classes+=" tuesday"
+        classes+=" track-2"
         break;
       }
       case "Wed": {
-        classes+=" wednesday"
+        classes+=" track-3"
         break;
       }
       case "Thu": {
-        classes+=" thursday"
+        classes+=" track-4"
         break;
       }
       case "Fri": {
-        classes+=" friday"
+        classes+=" track-5"
         break;
       }
     }
@@ -133,4 +133,7 @@ export class ConsultationsComponent implements OnInit {
   }
 
 
+  getEventTime() {
+
+  }
 }

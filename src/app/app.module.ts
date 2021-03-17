@@ -12,13 +12,15 @@ import {DateAdapter, MAT_DATE_FORMATS, MatNativeDateModule} from '@angular/mater
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {DateFnsDateAdapter, MAT_DATE_FNS_DATE_FORMATS} from "./utils/DateFnsDateAdapter";
+import { TestComponent } from './test/test.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ConsultationsComponent
+    ConsultationsComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
