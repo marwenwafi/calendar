@@ -137,21 +137,32 @@ body {
 }
 
 .track-1 {
+  grid-column: track-1;
   background-color: #1259B2;
   color: #fff;
 }
 
 .track-2 {
+  grid-column: track-2;
   background-color: #687f00;
   color: #fff;
 }
 
 .track-3 {
+  grid-column: track-3;
   background-color: #544D69;
   color: #fff;
 }
 
 .track-4 {
+  grid-column: track-4;
+  background-color: #c35500;
+  color: #fff;
+}
+.track-5 {
+  grid-column: track-5
+
+;
   background-color: #c35500;
   color: #fff;
 }
